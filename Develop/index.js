@@ -6,8 +6,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // array of questions for user (activity 40 from week 9, reference/resource)
-function promptUser() {
-    return inquirer.prompt([
+const questions = [
         {
             type: "input",
             message: "What is the title of your project?",
@@ -53,8 +52,8 @@ function promptUser() {
             message: "Enter your email address.",
             name: "questions"
         }
-    ])
-};
+    ];
+
 
 
 
@@ -74,15 +73,6 @@ function init() {
     })
 }
 
-// activity 40 from week 9, reference/resource
-async function init() {
-
-    try {
-        const answers = await promptUser();
-    } catch (err) {
-        
-    }
-}
 
 init();
 
