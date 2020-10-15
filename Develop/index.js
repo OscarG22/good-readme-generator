@@ -50,12 +50,8 @@ const questions = [{
     type: "input",
     message: "Enter your email address.",
     name: "questions"
-}]
-    //response function (09-NodeJS/day2/activity29)
-    .then(function (response) {
-        printResponse(response);
-
-    });
+}];
+    
 
 
 
