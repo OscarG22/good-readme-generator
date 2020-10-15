@@ -51,7 +51,12 @@ const questions = [{
     message: "Enter your email address.",
     name: "questions"
 }];
-//
+    //response function (09-NodeJS/day2/activity29)
+    .then(function (response) {
+    printResponse(response);
+
+})
+
 
 
 // function to write README file
@@ -64,7 +69,7 @@ function writeToFile(fileName, newRead) {
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(function(answers){
+    inquirer.prompt(questions).then(function (answers) {
         let markdown = generateMarkdown(answers)
         console.log(markdown)
     })
