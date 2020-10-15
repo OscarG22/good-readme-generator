@@ -5,53 +5,56 @@ const inquirer = require("inquirer");
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-// array of questions for user
-const questions = [{
-    type: "input",
-    message: "What is the title of your project?",
-    name: "title"
-},
-{
-    type: "input",
-    message: "Enter a description of your project.",
-    name: "description"
-},
-{
-    type: "input",
-    message: "Enter installation instructions for your project.",
-    name: "installation"
-},
-{
-    type: "input",
-    message: "",
-    name: "usage"
-},
-{
-    type: "input",
-    message: "Select your license of choice.",
-    name: "license"
-},
-{
-    type: "input",
-    message: "Did anyone else contribute to this project?",
-    name: "contribution"
-},
-{
-    type: "input",
-    message: "Please provide test-instructions.",
-    name: "test-instructions"
-},
-{
-    type: "input",
-    message: "Enter your GitHub username.",
-    name: "questions"
-},
-{
-    type: "input",
-    message: "Enter your email address.",
-    name: "questions"
-}];
-    
+// array of questions for user (activity 40 from week 9, reference/resource)
+function promptUser() {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "What is the title of your project?",
+            name: "title"
+        },
+        {
+            type: "input",
+            message: "Enter a description of your project.",
+            name: "description"
+        },
+        {
+            type: "input",
+            message: "Enter installation instructions for your project.",
+            name: "installation"
+        },
+        {
+            type: "input",
+            message: "How is the project to be used?",
+            name: "usage"
+        },
+        {
+            type: "input",
+            message: "Select your license of choice.",
+            name: "license"
+        },
+        {
+            type: "input",
+            message: "Did anyone else contribute to this project?",
+            name: "contribution"
+        },
+        {
+            type: "input",
+            message: "Please provide test-instructions.",
+            name: "test-instructions"
+        },
+        {
+            type: "input",
+            message: "Enter your GitHub username.",
+            name: "questions"
+        },
+        {
+            type: "input",
+            message: "Enter your email address.",
+            name: "questions"
+        }
+    ])
+};
 
 
 
@@ -71,6 +74,15 @@ function init() {
     })
 }
 
-// function call to initialize program
+// activity 40 from week 9, reference/resource
+async function init() {
+
+    try {
+        const answers = await promptUser();
+    } catch (err) {
+        
+    }
+}
+
 init();
 
